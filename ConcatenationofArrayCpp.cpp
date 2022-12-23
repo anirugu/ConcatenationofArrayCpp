@@ -8,22 +8,18 @@ using namespace std;
 
 class Solution {
 public:
-    vector<int> getConcatenation(vector<int>& nums)
-    {
-        for (auto x : nums)
-        {
-            nums.push_back(x);
-        }
-        return nums;
-    }
+	vector<int> getConcatenation(vector<int>& nums)
+	{
+		nums.insert(nums.begin(), nums.begin(), nums.end());
+		return nums;
+	}
 };
 
 int main()
 {
-    Solution sol;
-    vector<int> val{ 1, 2, 3, 4 };
-    sol.getConcatenation(val);
-    std::cout << "Hello World!\n";
+	Solution sol;
+	vector<int> val{ 1, 2, 3, 4 };
+	val = sol.getConcatenation(val);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
